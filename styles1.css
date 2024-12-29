@@ -1,0 +1,110 @@
+/* Estilo básico */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #f7d9e2, #ffb3c6);
+    font-family: 'Georgia', serif;
+    color: #540d6e;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Rosas */
+.roses {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+}
+
+.rose {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, red 50%, darkred 100%);
+    border-radius: 50%;
+    animation: float 4s ease-in-out infinite;
+}
+
+.rose::before,
+.rose::after {
+    content: '';
+    position: absolute;
+    background: radial-gradient(circle, pink 50%, red 100%);
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+
+.rose::before {
+    width: 40px;
+    height: 40px;
+    top: -10px;
+    left: -5px;
+}
+
+.rose::after {
+    width: 30px;
+    height: 30px;
+    bottom: -5px;
+    right: -5px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    50% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+}
+
+/* Carta */
+.letter {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    animation: fadeIn 3s;
+}
+
+.heading {
+    font-size: 2rem;
+    margin: 0;
+    color: #c71585;
+}
+
+.content {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.signature {
+    font-size: 1rem;
+    font-style: italic;
+    color: #8b0000;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
